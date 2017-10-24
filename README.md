@@ -46,7 +46,8 @@ When you want to use polymorphism to instantiate objects of classes with a commo
 #### Chain of Responsibility, Command
 
 ## Command Pattern
-```static void Main(string[] args)
+```C#
+static void Main(string[] args)
         {
             //Define objects
             IVehicle AudiA6 = new Car();
@@ -69,5 +70,6 @@ When you want to use polymorphism to instantiate objects of classes with a commo
             {
                 cmnd.Execute();
             }
-        }```
+        }
+```
 
