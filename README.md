@@ -7,9 +7,9 @@ Original Title: Design Patterns: Elements of reusable Object-Oriented Software.
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 1. Creational
-* Factory Method
-* Abstract Factor
-* Builder
+…Factory Method
+…Abstract Factor
+…Builder
 * Prototype
 * Singleton
 2. Structural
@@ -47,14 +47,14 @@ When you want to use polymorphism to instantiate objects of classes with a commo
 
 ## Command Pattern
 ```C#
-//By using an interface we guarantee that all ICommand interface types are executable and undoable.
+    //By using an interface we guarantee that all ICommand interface types are executable and undoable.
     public interface ICommand
     {
         void Execute();
         void Undo();
     }
 
-    //Instantiating a vehicle interface to use polymorphism later on
+    //Instantiating a vehicle interface to use polymorphism later on.
     public interface IVehicle
     {
         void turnOn();
@@ -63,7 +63,7 @@ When you want to use polymorphism to instantiate objects of classes with a commo
         void GearDown();
     }
 
-    //Car implementation of the Vehicle interface
+    //Car implementation of the Vehicle interface.
     public class Car : IVehicle 
     {
         private int gear = 0;
@@ -92,7 +92,7 @@ When you want to use polymorphism to instantiate objects of classes with a commo
 
     }
 
-    //Plane implementation of the Vehicle interface
+    //Plane implementation of the Vehicle interface.
     public class Plane : IVehicle
     {
         public void turnOn()
@@ -113,7 +113,7 @@ When you want to use polymorphism to instantiate objects of classes with a commo
         }         
     }
 
-    //Car specific command encapsulating the Car object
+    //Car specific command encapsulating the Car object.
     public class CarGearUp : ICommand
     {
         private IVehicle car;
@@ -133,7 +133,7 @@ When you want to use polymorphism to instantiate objects of classes with a commo
         }
     }
 
-    //Plane specific command encapsulating the Plane object
+    //Plane specific command encapsulating the Plane object.
     public class PlaneGearUp : ICommand
     {
         private IVehicle plane;
@@ -153,7 +153,7 @@ When you want to use polymorphism to instantiate objects of classes with a commo
         }
     }
 
-    //Vehicle specific command combining encapsulation and polymorphism
+    //Vehicle specific command combining encapsulation and polymorphism.
     public class TurnAllVehiclesOff : ICommand
     {
         private List<IVehicle> vehicles;
