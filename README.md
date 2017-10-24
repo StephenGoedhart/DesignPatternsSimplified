@@ -2,15 +2,15 @@
 # Gang of Four: Simplified
 
 ### Solutions to reoccurring object-oriented programming challenges. 
-### Simplified documentation to increase memorability and usability.
+Simplified documentation to increase memorability and usability.
 Original Title: Design Patterns: Elements of reusable Object-Oriented Software. 
+
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 1. Creational
-…  Factory Method
-
-..* Abstract Factor
-..* Builder
+* Factory Method
+* Abstract Factor
+* Builder
 * Prototype
 * Singleton
 2. Structural
@@ -47,6 +47,9 @@ When you want to use polymorphism to instantiate objects of classes with a commo
 #### Chain of Responsibility, Command
 
 ## Command Pattern
+
+
+###### C# Code example:
 ```C#
     //By using an interface we guarantee that all ICommand interface types are executable and undoable.
     public interface ICommand
