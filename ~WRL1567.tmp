@@ -45,11 +45,10 @@ Describes how a group of objects cooperate to perform a task that no single obje
 When you want to use polymorphism to instantiate objects of classes with a common parent class. Not using the design pattern may lead to faulty instantiation and code assuming inheritance that isn’t available. 
 
 #### Chain of Responsibility, Command
-Encapsulating behavior of an initial class within a command class can be beneficial because it allows extension of behavior without changing the initial class or makes alternations of this behavior within the initial class easier because the only dependency is the command class. 
 
 ## Command Pattern
 
-![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/Src/images/icon48.png "Logo Title Text 1")
+
 ###### C# Code example:
 ```C#
     //By using an interface we guarantee that all ICommand interface types are executable and undoable.
