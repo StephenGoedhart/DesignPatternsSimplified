@@ -49,7 +49,7 @@ Encapsulating behavior of an initial class within a command class can be benefic
 
 ## Command Pattern
 
-![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/Src/images/icon48.png "Logo Title Text 1")
+![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/commandDesignPatternDiagram.png "Command Design Pattern Diagram")
 ###### C# Code example:
 ```C#
     //By using an interface we guarantee that all ICommand interface types are executable and undoable.
