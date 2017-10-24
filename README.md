@@ -7,9 +7,9 @@ Original Title: Design Patterns: Elements of reusable Object-Oriented Software.
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 1. Creational
-..*Factory Method
-..*Abstract Factor
-..*Builder
+..* Factory Method
+..* Abstract Factor
+..* Builder
 * Prototype
 * Singleton
 2. Structural
