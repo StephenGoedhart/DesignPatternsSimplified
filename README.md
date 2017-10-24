@@ -50,6 +50,7 @@ Encapsulating behavior of an initial class within a command class can be benefic
 ## Command Pattern
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/commandDesignPatternDiagram.png "Command Design Pattern Diagram")
+
 By separating the object that calls a method from the one who executes it, we achieve an extra level of decoupling. This increases the flexibility by a lot. We can call multiple methods within the command. We can call commands within commands. We can extent behavior by adding / altering commands without worrying about the actual implementation. We can alter implementation in the receiver class without worrying about dependencies.  
 ###### C# Code example:
 ```C#
