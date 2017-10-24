@@ -8,7 +8,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 1. Creational
 
-…Factory Method
+??* Factory Method
 
 ..* Abstract Factor
 ..* Builder
