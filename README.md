@@ -50,11 +50,13 @@ Encapsulating behavior of an initial class within a command class can be benefic
 ## Command Pattern
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/commandDesignPatternDiagram.png "Command Design Pattern Diagram")
+
 By separating method calls using the implementation of the command design pattern we reach a new level of decoupling and possibilities.
-Call multiple receiver methods within the command. 
-Call commands within commands. 
-Extent behavior by adding / altering commands without worrying about the actual implementation. 
-Alter implementation in the receiver class without worrying it’s dependencies.  
+* Call multiple receiver methods within the command. 
+* Call commands within commands. 
+* Extent behavior by adding / altering commands without worrying about the actual implementation. 
+* Alter implementation in the receiver class without worrying it’s dependencies.  
+
 ###### C# Code example:
 ```C#
     //By using an interface we guarantee that all ICommand interface types are executable and undoable.
