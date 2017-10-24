@@ -51,7 +51,7 @@ Encapsulating behavior of an initial class within a command class can be benefic
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/commandDesignPatternDiagram.png "Command Design Pattern Diagram")
 
-By separating method calls using the implementation of the command design pattern we reach a new level of decoupling and possibilities.
+By separating method invocation from method declaration using the implementation of the command design pattern we reach a new level of decoupling and possibilities.
 * Call multiple receiver methods within the command. 
 * Call commands within commands. 
 * Extent behavior by adding / altering commands without worrying about the actual implementation. 
