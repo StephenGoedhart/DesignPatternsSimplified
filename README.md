@@ -10,8 +10,8 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
-  * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to keep encapsulate the instantiation logic in one place.
-  * **Factory Method / Virtual Constructor:** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this factory method in child classes. This approach increases scalability as we force polymorphic dependency.
+  * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
+  * **[Factory Method / Virtual Constructor](#factory-method):** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this factory method in child classes. This approach increases scalability as we force polymorphic dependency.
   * **Abstract Factory / Kit Pattern:** 
 
 
@@ -103,7 +103,8 @@ static void Main(string[] args)
 //Created Cat
 ```
 
-## Factory Method- / Virtual Constructor Pattern
+## Factory Method
+###### [< Back to pattern overview](#design-patterns-categorized)
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
 
