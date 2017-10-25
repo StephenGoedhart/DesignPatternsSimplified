@@ -9,6 +9,12 @@ Original Title: Design Patterns: Elements of reusable Object-Oriented Software.
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 ## 23 Design patterns categorized
+
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+
 #### Creational Design Patterns
 
 Design patterns that deal with object creation.
