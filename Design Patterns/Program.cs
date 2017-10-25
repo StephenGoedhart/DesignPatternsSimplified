@@ -7,7 +7,12 @@ namespace Design_Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("//------------------- Factory Design Pattern ----------------------//");
+            Console.WriteLine("//------------------- Simple Factory Pattern ----------------------//");
+            AnimalFactory animalFactory = new AnimalFactory();
+            Dog dog = animalFactory.createDog();
+            Cat cat = animalFactory.createCat();
+
+            Console.WriteLine("//------------------- Factory Method Design Pattern ----------------------//");
             ShapeFactory shapeFactory = new ShapeFactory();
             IShape circle = shapeFactory.Create(ShapeFactory.Type.circle);
             IShape rectangle = shapeFactory.Create(ShapeFactory.Type.rectangle);

@@ -9,8 +9,9 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
+  * **Simple Factory / Factory:** A class that instantiates objects of certain classes. Used to increase loose coupling and to increase scalability by keeping the instantiation logic in one place. 
   * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors. 
-  * **Abstract Factory:** 
+  * **Abstract Factory / Kit Pattern:** 
 
 
 * Item 2
@@ -51,21 +52,17 @@ Defers object creation to subclasses.
 Describes ways to assemble objects.
 #### Behavioral design patterns
 Describes how a group of objects cooperate to perform a task that no single object can do alone.
-## Use cases for:
-#### Abstract Factory, Factory Method, Prototype
-When you want to use polymorphism to instantiate objects of classes with a common parent class. Not using the design pattern may lead to faulty instantiation and code assuming inheritance that isn’t available. 
 
-#### Chain of Responsibility, Command
-By separating method invocation (command) from method declaration (receiver) using the implementation of the command design pattern we reach a new level of decoupling and possibilities.
-* Call multiple receiver methods within the command. 
-* Call commands within commands. 
-* Extent behavior by adding / altering commands without worrying about the actual implementation. 
-* Alter implementation in the receiver class without worrying it’s dependencies.  
-
-## Factory Method Pattern
+## Simple Factory- / Factory Pattern
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
-A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors.
+A class that instantiates objects of certain classes. Used to increase loose coupling and to increase scalability by keeping the instantiation logic in one place. 
+
+
+## Factory Method- / Virtual Constructor Pattern
+
+![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
+A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type and decrease invalid type errors.
 
 ###### C# Code example:
 ```C#
