@@ -10,17 +10,19 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 ## 23 Design patterns categorized
 
-* Item 1
+* #### Creational Design Patterns
+Design patterns that deal with object creation.
+  * #### Factory Method: 
+The Factory design pattern instantiates objects based on classes with a common parent class or interface. Instantiating such objects in a factory class, we guarantee type dependencies and decrease invalid type errors.
+* #### Abstract Factory: 
+
+
 * Item 2
   * Item 2a
   * Item 2b
 
-#### Creational Design Patterns
 
 Design patterns that deal with object creation.
-
-#### Factory Method: 
-The Factory design pattern instantiates objects based on classes with a common parent class or interface. Instantiating such objects in a factory class, we guarantee type dependencies and decrease invalid type errors.
 
 * Abstract Factory
 * Builder
