@@ -9,8 +9,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
-  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors.
-* **Abstract Factory:** 
+  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors. * **Abstract Factory:** 
 
 
 * Item 2
@@ -65,8 +64,7 @@ By separating method invocation (command) from method declaration (receiver) usi
 ## Factory Method Pattern
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
-
-A factory class instantiates objects based on classes with a common parent class or interface. This way we guarantee type dependencies and decrease invalid type errors.
+A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors.
 
 ###### C# Code example:
 ```C#
@@ -131,6 +129,10 @@ static void Main(string[] args)
             rectangle.printShape();
             triangle.printShape();
 	}
+//Output: 
+//This is a circle 
+//This is a rectangle
+//This is a triangle
 ```
 
 ## Command Pattern
