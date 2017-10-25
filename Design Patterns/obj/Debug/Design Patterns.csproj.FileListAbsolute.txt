@@ -5,3 +5,10 @@ C:\Users\stephen.goedhart\source\repos\Design Patterns\Design Patterns\obj\Debug
 C:\Users\stephen.goedhart\source\repos\Design Patterns\Design Patterns\obj\Debug\Design Patterns.csproj.CoreCompileInputs.cache
 C:\Users\stephen.goedhart\source\repos\Design Patterns\Design Patterns\obj\Debug\Design Patterns.exe
 C:\Users\stephen.goedhart\source\repos\Design Patterns\Design Patterns\obj\Debug\Design Patterns.pdb
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\bin\Debug\Design Patterns.exe.config
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\bin\Debug\Design Patterns.exe
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\bin\Debug\Design Patterns.pdb
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\obj\Debug\Design Patterns.csprojResolveAssemblyReference.cache
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\obj\Debug\Design Patterns.csproj.CoreCompileInputs.cache
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\obj\Debug\Design Patterns.exe
+C:\Users\stephen.goedhart\Desktop\DesignPatternsSimplified\Design Patterns\obj\Debug\Design Patterns.pdb

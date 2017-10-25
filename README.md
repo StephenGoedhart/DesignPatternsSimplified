@@ -1,8 +1,6 @@
 ###### *Stephen Goedhart*
 # Gang of Four: Simplified
-
-### Solutions to reoccurring object-oriented programming challenges. 
-Simplified documentation to increase memorability and usability.
+### Simplified documentation to increase memorability and usability.
 
 Original Title: Design Patterns: Elements of reusable Object-Oriented Software. 
 
@@ -11,8 +9,8 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
-  * **Factory Method:** The Factory design pattern instantiates objects based on classes with a common parent class or interface. Instantiating such objects in a factory class, we guarantee type dependencies and decrease invalid type errors.
-* **bstract Factory:** 
+  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface. This way we guarantee type dependencies and decrease invalid type errors.
+* **Abstract Factory:** 
 
 
 * Item 2

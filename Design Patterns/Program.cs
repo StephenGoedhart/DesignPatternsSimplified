@@ -7,6 +7,17 @@ namespace Design_Patterns
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("//------------------- Factory Design Pattern ----------------------//");
+            ShapeFactory shapeFactory = new ShapeFactory();
+            IShape circle = shapeFactory.Create(ShapeFactory.Type.circle);
+            IShape rectangle = shapeFactory.Create(ShapeFactory.Type.rectangle);
+            IShape triangle = shapeFactory.Create(ShapeFactory.Type.triangle);
+
+            circle.printShape();
+            rectangle.printShape();
+            triangle.printShape();
+
+            Console.WriteLine("//------------------- Command Design Pattern ----------------------//");
             //Define objects.
             IVehicle AudiA6 = new Car();
             IVehicle Cessna172 = new Plane();
@@ -28,7 +39,7 @@ namespace Design_Patterns
             {
                 cmnd.Execute();
             }
-
+            Console.ReadLine();
         }
     }
 }
