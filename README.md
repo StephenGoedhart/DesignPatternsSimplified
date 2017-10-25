@@ -92,7 +92,8 @@ namespace SimpleFactory
             return new Cat();
         }
     }
-}```
+}
+```
 
 
 ###### C# Usage:
