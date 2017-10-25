@@ -5,7 +5,9 @@
 Simplified documentation to increase memorability and usability.
 Original Title: Design Patterns: Elements of reusable Object-Oriented Software. 
 
+
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
+
 ## 23 Design patterns categorized
 1. Creational
 * Factory Method
