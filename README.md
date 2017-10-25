@@ -58,12 +58,48 @@ Describes how a group of objects cooperate to perform a task that no single obje
 ###### [< Back to pattern overview](#design-patterns-categorized)
  
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/SimpleFactoryDesignPattern.png "Simple Factory Design Pattern Diagram")
+
 A class that instantiates objects of certain classes. Used to increase loose coupling and to increase scalability by keeping the instantiation logic in one place. 
 
+###### C# Code example:
+```C#
+public class Dog
+    {
+        public Dog()
+        {
+            Console.WriteLine("Created Dog");
+        }
+    }
+    public class Cat
+    {
+        public Cat()
+        {
+            Console.WriteLine("Created Cat");
+        }
+    }
+    public class AnimalFactory
+    {
+        public Dog createDog()
+        {
+            return new Dog();
+        }
+        public Cat createCat()
+        {
+            return new Cat();
+        }
+    }
+static void Main(string[] args)
+    {
+        AnimalFactory animalFactory = new AnimalFactory();
+        Dog dog = animalFactory.createDog();
+        Cat cat = animalFactory.createCat();
+    }
+```
 
 ## Factory Method- / Virtual Constructor Pattern
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
+
 A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type and decrease invalid type errors.
 
 ###### C# Code example:
