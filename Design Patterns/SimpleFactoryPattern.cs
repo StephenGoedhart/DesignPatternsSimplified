@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Design_Patterns
+namespace SimpleFactory
 {
     public class Dog
     {
@@ -31,5 +27,4 @@ namespace Design_Patterns
             return new Cat();
         }
     }
-
 }

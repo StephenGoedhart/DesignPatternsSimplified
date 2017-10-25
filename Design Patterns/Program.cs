@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using SF = SimpleFactory;
+using FM = FactoryMethod;
 
 namespace Design_Patterns
 {
@@ -7,20 +9,23 @@ namespace Design_Patterns
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("//------------------- Simple Factory Pattern ----------------------//");
-            AnimalFactory animalFactory = new AnimalFactory();
-            Dog dog = animalFactory.createDog();
-            Cat cat = animalFactory.createCat();
+            //Declare simple factory.
+            SF.AnimalFactory animalFactory = new SF.AnimalFactory();
 
-            Console.WriteLine("//------------------- Factory Method Design Pattern ----------------------//");
-            ShapeFactory shapeFactory = new ShapeFactory();
-            IShape circle = shapeFactory.Create(ShapeFactory.Type.circle);
-            IShape rectangle = shapeFactory.Create(ShapeFactory.Type.rectangle);
-            IShape triangle = shapeFactory.Create(ShapeFactory.Type.triangle);
+            //Use factory to create objects.
+            SF.Dog sfDog = animalFactory.createDog();
+            SF.Cat sfCat = animalFactory.createCat();
 
-            circle.printShape();
-            rectangle.printShape();
-            triangle.printShape();
+            Console.WriteLine("//------------------- Factory Method Pattern ----------------------//");
+            //Define factories with overridden factory methods.
+            FM.CatFactory catFactory = new FM.CatFactory();
+            FM.DogFactory dogFactory = new FM.DogFactory();
+
+            //Use factories to define objects based on the same type. 
+            FM.IAnimal fmDog = dogFactory.Create();
+            FM.IAnimal fmCat = catFactory.Create();
 
             Console.WriteLine("//------------------- Command Design Pattern ----------------------//");
             //Define objects.

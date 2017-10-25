@@ -61,8 +61,10 @@ Describes how a group of objects cooperate to perform a task that no single obje
 
 A class that instantiates objects of certain classes. Used to increase loose coupling and to increase scalability by keeping the instantiation logic in one place. 
 
-###### C# Code example:
+###### C# Declaration:
 ```C#
+namespace SimpleFactory
+{
     public class Dog
     {
         public Dog()
@@ -70,7 +72,6 @@ A class that instantiates objects of certain classes. Used to increase loose cou
             Console.WriteLine("Created Dog");
         }
     }
-    
     public class Cat
     {
         public Cat()
@@ -78,7 +79,6 @@ A class that instantiates objects of certain classes. Used to increase loose cou
             Console.WriteLine("Created Cat");
         }
     }
-    
     public class AnimalFactory
     {
         public Dog createDog()
@@ -90,14 +90,30 @@ A class that instantiates objects of certain classes. Used to increase loose cou
             return new Cat();
         }
     }
+}```
 
-static void Main(string[] args)
+###### C# Usage:
+```C#
+using System;
+using System.Collections.Generic;
+using SF = SimpleFactory;
+
+namespace Design_Patterns
 {
-    AnimalFactory animalFactory = new AnimalFactory();
-    Dog dog = animalFactory.createDog();
-    Cat cat = animalFactory.createCat();
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            //Declare simple factory.
+            SF.AnimalFactory animalFactory = new SF.AnimalFactory();
 
+            //Use factory to create objects.
+            SF.Dog sfDog = animalFactory.createDog();
+            SF.Cat sfCat = animalFactory.createCat();
+        }
+    }
+}
 //Output: 
 //Created Dog
 //Created Cat
@@ -112,68 +128,47 @@ A factory class instantiates objects based on classes with a common parent class
 
 ###### C# Code example:
 ```C#
-public interface IShape
+public interface IAnimal
     {
-        void printShape();
+        void makeSound();
     }
 
-    public class Circle : IShape
+    public class Dog : IAnimal
     {
-        public void printShape()
+        public void makeSound()
         {
-            Console.WriteLine("This is a circle");
-        }
-    }
-    public class Rectangle : IShape
-    {
-        public void printShape()
-        {
-            Console.WriteLine("This is a rectangle");
-        }
-    }
-    public class Triangle : IShape
-    {
-        public void printShape()
-        {
-            Console.WriteLine("This is a triangle");
+            Console.WriteLine("Woof!");
         }
     }
 
-    public class ShapeFactory
+    public class Cat : IAnimal
     {
-        public enum Type { circle, rectangle, triangle }
-        public IShape Create(Type type)
+        public void makeSound()
         {
-            switch (type)
-            {
-                case Type.circle:
-                    return new Circle();
-                    break;
-                case Type.rectangle:
-                    return new Rectangle();
-                    break;
-                case Type.triangle:
-                    return new Triangle();
-                    break;
-                default:
-                    throw new Exception("Invalid ShapeFactory type supplied...");
-                    break;
-            }
+            Console.WriteLine("Meow!");
         }
     }
-static void Main(string[] args)
-        {
-            Console.WriteLine("//------------------- Factory Design Pattern ----------------------//");
-            ShapeFactory shapeFactory = new ShapeFactory();
-            IShape circle = shapeFactory.Create(ShapeFactory.Type.circle);
-            IShape rectangle = shapeFactory.Create(ShapeFactory.Type.rectangle);
-            IShape triangle = shapeFactory.Create(ShapeFactory.Type.triangle);
 
-            circle.printShape();
-            rectangle.printShape();
-            triangle.printShape();
-	}
-//Output: 
+    public abstract class AnimalFactory
+    {
+        public abstract IAnimal Create();
+    }
+
+    public class DogFactory : AnimalFactory
+    {
+        public override IAnimal Create()
+        {
+            return new Dog();
+        }
+    }
+
+    public class CatFactory : AnimalFactory
+    {
+        public override IAnimal Create()
+        {
+            return new Cat();
+        }
+    }//Output: 
 //This is a circle 
 //This is a rectangle
 //This is a triangle
