@@ -9,7 +9,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 ## Design patterns categorized
 
-* **Creational Design Patterns:** Design patterns that deal with object creation.
+* ### Creational Design Patterns:** Design patterns that deal with object creation.
   * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory provides a class that instantiates objects. This pattern is used to increase scalability by keeping the instantiation logic in one place. 
   * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors. 
   * **Abstract Factory / Kit Pattern:** 
@@ -63,13 +63,14 @@ A class that instantiates objects of certain classes. Used to increase loose cou
 
 ###### C# Code example:
 ```C#
-public class Dog
+    public class Dog
     {
         public Dog()
         {
             Console.WriteLine("Created Dog");
         }
     }
+    
     public class Cat
     {
         public Cat()
@@ -77,6 +78,7 @@ public class Dog
             Console.WriteLine("Created Cat");
         }
     }
+    
     public class AnimalFactory
     {
         public Dog createDog()
@@ -88,12 +90,13 @@ public class Dog
             return new Cat();
         }
     }
+
 static void Main(string[] args)
-    {
-        AnimalFactory animalFactory = new AnimalFactory();
-        Dog dog = animalFactory.createDog();
-        Cat cat = animalFactory.createCat();
-    }
+{
+    AnimalFactory animalFactory = new AnimalFactory();
+    Dog dog = animalFactory.createDog();
+    Cat cat = animalFactory.createCat();
+}
 
 //Output: 
 //Created Dog
