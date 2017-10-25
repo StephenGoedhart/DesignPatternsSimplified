@@ -9,7 +9,8 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
-  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors. * **Abstract Factory:** 
+  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors. 
+* **Abstract Factory:** 
 
 
 * Item 2
