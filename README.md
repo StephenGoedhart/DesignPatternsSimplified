@@ -45,7 +45,12 @@ Describes how a group of objects cooperate to perform a task that no single obje
 When you want to use polymorphism to instantiate objects of classes with a common parent class. Not using the design pattern may lead to faulty instantiation and code assuming inheritance that isn’t available. 
 
 #### Chain of Responsibility, Command
-Encapsulating behavior of an initial class within a command class can be beneficial because it allows extension of behavior without changing the initial class or makes alternations of this behavior within the initial class easier because the only dependency is the command class. 
+By separating method invocation (command) from method declaration (receiver) using the implementation of the command design pattern we reach a new level of decoupling and possibilities.
+* Call multiple receiver methods within the command. 
+* Call commands within commands. 
+* Extent behavior by adding / altering commands without worrying about the actual implementation. 
+* Alter implementation in the receiver class without worrying it’s dependencies.  
+
 
 ## Command Pattern
 
@@ -59,14 +64,14 @@ By separating method invocation from method declaration using the implementation
 
 ###### C# Code example:
 ```C#
-    //By using an interface we guarantee that all ICommand interface types are executable and undoable.
+    //By using an interface we guarantee type related functionality.
     public interface ICommand
     {
         void Execute();
         void Undo();
     }
 
-    //Instantiating a vehicle interface to use polymorphism later on.
+    //Use a receiver interface to enable the use of polymorphism later on.
     public interface IVehicle
     {
         void turnOn();
@@ -75,7 +80,7 @@ By separating method invocation from method declaration using the implementation
         void GearDown();
     }
 
-    //Car implementation of the Vehicle interface.
+    //Define a receiver class that implements the receiver interface
     public class Car : IVehicle 
     {
         private int gear = 0;
@@ -104,7 +109,7 @@ By separating method invocation from method declaration using the implementation
 
     }
 
-    //Plane implementation of the Vehicle interface.
+    //Define another receiver class that implements the receiver interface
     public class Plane : IVehicle
     {
         public void turnOn()
@@ -125,7 +130,7 @@ By separating method invocation from method declaration using the implementation
         }         
     }
 
-    //Car specific command encapsulating the Car object.
+    //A command can be as specific as you'd like. This command only adheres to Car objects. 
     public class CarGearUp : ICommand
     {
         private IVehicle car;
@@ -145,7 +150,7 @@ By separating method invocation from method declaration using the implementation
         }
     }
 
-    //Plane specific command encapsulating the Plane object.
+    //A command can be as specific as you'd like. This command only adheres to Plane objects. 
     public class PlaneGearUp : ICommand
     {
         private IVehicle plane;
@@ -165,7 +170,7 @@ By separating method invocation from method declaration using the implementation
         }
     }
 
-    //Vehicle specific command combining encapsulation and polymorphism.
+    //A command can be as specific as you'd like. This command adheres to all IVehicle types. 
     public class TurnAllVehiclesOff : ICommand
     {
         private List<IVehicle> vehicles;
@@ -189,8 +194,7 @@ By separating method invocation from method declaration using the implementation
                 vehicle.turnOn();
             }
         }
-    }    
-
+    } 
 static void Main(string[] args)
         {
             //Define objects.

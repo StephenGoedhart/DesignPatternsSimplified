@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace Design_Patterns
 {
-    //By using an interface we guarantee that all ICommand interface types are executable and undoable.
+    //By using an interface we guarantee type related functionality.
     public interface ICommand
     {
         void Execute();
         void Undo();
     }
 
-    //Instantiating a vehicle interface to use polymorphism later on
+    //Use a receiver interface to enable the use of polymorphism later on.
     public interface IVehicle
     {
         void turnOn();
@@ -20,7 +20,7 @@ namespace Design_Patterns
         void GearDown();
     }
 
-    //Car implementation of the Vehicle interface
+    //Define a receiver class that implements the receiver interface
     public class Car : IVehicle 
     {
         private int gear = 0;
@@ -49,7 +49,7 @@ namespace Design_Patterns
 
     }
 
-    //Plane implementation of the Vehicle interface
+    //Define another receiver class that implements the receiver interface
     public class Plane : IVehicle
     {
         public void turnOn()
@@ -70,7 +70,7 @@ namespace Design_Patterns
         }         
     }
 
-    //Car specific command encapsulating the Car object
+    //A command can be as specific as you'd like. This command only adheres to Car objects. 
     public class CarGearUp : ICommand
     {
         private IVehicle car;
@@ -90,7 +90,7 @@ namespace Design_Patterns
         }
     }
 
-    //Plane specific command encapsulating the Plane object
+    //A command can be as specific as you'd like. This command only adheres to Plane objects. 
     public class PlaneGearUp : ICommand
     {
         private IVehicle plane;
@@ -110,7 +110,7 @@ namespace Design_Patterns
         }
     }
 
-    //Vehicle specific command combining encapsulation and polymorphism
+    //A command can be as specific as you'd like. This command adheres to all IVehicle types. 
     public class TurnAllVehiclesOff : ICommand
     {
         private List<IVehicle> vehicles;
