@@ -9,9 +9,8 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 ## Design patterns categorized
 
-* ### Creational Design Patterns:
-Design patterns that deal with object creation.
-  * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory provides a class that instantiates objects. This pattern is used to increase scalability by keeping the instantiation logic in one place. 
+* **Creational Design Patterns:** Design patterns that deal with object creation.
+  * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to increase scalability by keeping the instantiation logic in one place. 
   * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors. 
   * **Abstract Factory / Kit Pattern:** 
 

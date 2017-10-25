@@ -5,56 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Design_Patterns
-{
-    
-    public interface IShape
+{    
+    public interface IAnimal
     {
-        void printShape();
+        void makeSound();
     }
 
-    public class Circle : IShape
+    public class Dog : IAnimal
     {
-        public void printShape()
+        public void makeSound()
         {
-            Console.WriteLine("This is a circle");
-        }
-    }
-    public class Rectangle : IShape
-    {
-        public void printShape()
-        {
-            Console.WriteLine("This is a rectangle");
-        }
-    }
-    public class Triangle : IShape
-    {
-        public void printShape()
-        {
-            Console.WriteLine("This is a triangle");
+            Console.WriteLine("Woof!");
         }
     }
 
-    public class ShapeFactory
+    public class Cat : IAnimal
     {
-        public enum Type { circle, rectangle, triangle }
-        public IShape Create(Type type)
+        public void makeSound()
         {
-            switch (type)
-            {
-                case Type.circle:
-                    return new Circle();
-                    break;
-                case Type.rectangle:
-                    return new Rectangle();
-                    break;
-                case Type.triangle:
-                    return new Triangle();
-                    break;
-                default:
-                    throw new Exception("Invalid ShapeFactory type supplied...");
-                    break;
-            }
+            Console.WriteLine("Meow!");
         }
     }
 
+    public abstract class AnimalFactory
+    {
+        public abstract IAnimal Create();
+    }
+
+    public class DogFactory : AnimalFactory
+    {
+        public override IAnimal Create()
+        {
+            return new Dog();
+        }
+    }
+
+    public class CatFactory : AnimalFactory
+    {
+        public override IAnimal Create()
+        {
+            return new Cat();
+        }
+    }
 }
