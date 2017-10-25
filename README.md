@@ -13,7 +13,8 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 Design patterns that deal with object creation.
 
-#### Factory Method: The Factory design pattern instantiates objects based on classes with a common parent class or interface. Instantiating such objects in a factory class, we guarantee type dependencies and decrease invalid type errors.
+#### Factory Method: 
+The Factory design pattern instantiates objects based on classes with a common parent class or interface. Instantiating such objects in a factory class, we guarantee type dependencies and decrease invalid type errors.
 
 * Abstract Factory
 * Builder
