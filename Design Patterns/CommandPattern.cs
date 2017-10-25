@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace Design_Patterns
 {
     //By using an interface we guarantee type related functionality.
@@ -46,7 +45,6 @@ namespace Design_Patterns
             gear--;
             Console.WriteLine("Car switched gear to: " + gear);
         }
-
     }
 
     //Define another receiver class that implements the receiver interface
