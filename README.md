@@ -59,7 +59,9 @@ Describes how a group of objects cooperate to perform a task that no single obje
  
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/SimpleFactoryDesignPattern.png "Simple Factory Design Pattern Diagram")
 
-A class that instantiates objects of certain classes. Used to increase loose coupling and to increase scalability by keeping the instantiation logic in one place. 
+The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
+
+The class diagram depicts a factory class with two methods. CreateCat and CreateDog. The names are self-explanatory. CreateCat() returns a new Cat and CreateDog returns a new Dog. We can now create either object without needing to know anything about its instantiation logic since that is encapsulated within factory class.  
 
 ###### C# Declaration:
 ```C#
