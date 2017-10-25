@@ -9,7 +9,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## 23 Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
-  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface. This way we guarantee type dependencies and decrease invalid type errors.
+  * **Factory Method / Virtual Constructor:** A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type dependencies and decrease invalid type errors.
 * **Abstract Factory:** 
 
 
@@ -62,6 +62,76 @@ By separating method invocation (command) from method declaration (receiver) usi
 * Extent behavior by adding / altering commands without worrying about the actual implementation. 
 * Alter implementation in the receiver class without worrying it’s dependencies.  
 
+## Factory Method Pattern
+
+![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
+
+A factory class instantiates objects based on classes with a common parent class or interface. This way we guarantee type dependencies and decrease invalid type errors.
+
+###### C# Code example:
+```C#
+public interface IShape
+    {
+        void printShape();
+    }
+
+    public class Circle : IShape
+    {
+        public void printShape()
+        {
+            Console.WriteLine("This is a circle");
+        }
+    }
+    public class Rectangle : IShape
+    {
+        public void printShape()
+        {
+            Console.WriteLine("This is a rectangle");
+        }
+    }
+    public class Triangle : IShape
+    {
+        public void printShape()
+        {
+            Console.WriteLine("This is a triangle");
+        }
+    }
+
+    public class ShapeFactory
+    {
+        public enum Type { circle, rectangle, triangle }
+        public IShape Create(Type type)
+        {
+            switch (type)
+            {
+                case Type.circle:
+                    return new Circle();
+                    break;
+                case Type.rectangle:
+                    return new Rectangle();
+                    break;
+                case Type.triangle:
+                    return new Triangle();
+                    break;
+                default:
+                    throw new Exception("Invalid ShapeFactory type supplied...");
+                    break;
+            }
+        }
+    }
+static void Main(string[] args)
+        {
+            Console.WriteLine("//------------------- Factory Design Pattern ----------------------//");
+            ShapeFactory shapeFactory = new ShapeFactory();
+            IShape circle = shapeFactory.Create(ShapeFactory.Type.circle);
+            IShape rectangle = shapeFactory.Create(ShapeFactory.Type.rectangle);
+            IShape triangle = shapeFactory.Create(ShapeFactory.Type.triangle);
+
+            circle.printShape();
+            rectangle.printShape();
+            triangle.printShape();
+	}
+```
 
 ## Command Pattern
 
