@@ -7,7 +7,7 @@ Original Title: Design Patterns: Elements of reusable Object-Oriented Software.
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 
-## 24 Design patterns categorized
+## Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
   * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory provides a class that instantiates objects. This pattern is used to increase scalability by keeping the instantiation logic in one place. 
@@ -55,6 +55,7 @@ Describes ways to assemble objects.
 Describes how a group of objects cooperate to perform a task that no single object can do alone.
 
 ## Simple Factory
+###### [< Back to pattern overview](#design-patterns-categorized)
  
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/SimpleFactoryDesignPattern.png "Simple Factory Design Pattern Diagram")
 A class that instantiates objects of certain classes. Used to increase loose coupling and to increase scalability by keeping the instantiation logic in one place. 
