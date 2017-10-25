@@ -94,6 +94,10 @@ static void Main(string[] args)
         Dog dog = animalFactory.createDog();
         Cat cat = animalFactory.createCat();
     }
+
+//Output: 
+//Created Dog
+//Created Cat
 ```
 
 ## Factory Method- / Virtual Constructor Pattern
