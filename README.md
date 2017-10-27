@@ -10,10 +10,9 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 ## Design patterns categorized
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
-  * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
+  * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate (hide) object instantiation logic and to declare this logic in one place.
   * **[Factory Method / Virtual Constructor](#factory-method):** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this object creation method in child classes. This approach increases scalability as we force polymorphic dependency.
-  * ****[Abstract Factory / Super Factory](#abstract-factory):** The abstract factory denotes the practice of using a factory to create other factories. By encapsulating the factory instantiation logic, we once again force a polymorphic approach, this time also with the factory itself. Not only this, since this factory of factories is supposed to be able to create multiple factories we are now able to create and group a family of factories. 
-
+  * **[Abstract Factory / Super Factory](#abstract-factory):** The abstract factory denotes the practice of using a factory to create other factories. This is most often used when there are multiple families of factories and we want to hide the instantiation logic. 
 
 * Item 2
   * Item 2a
@@ -22,7 +21,6 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 Design patterns that deal with object creation.
 
-* Abstract Factory
 * Builder
 * Prototype
 * Singleton
@@ -209,70 +207,147 @@ namespace Design_Patterns
 ## Abstract Factory
 ###### [< Back to pattern overview](#design-patterns-categorized)
  
-![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/SimpleFactoryDesignPattern.png "Simple Factory Design Pattern Diagram")
+![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/AbstractFactoryDesignPatternDiagram.png "Abstract Factory Design Pattern Diagram")
 
-The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
-
-The class diagram depicts a factory class with two methods. CreateCat and CreateDog. The names are self-explanatory. CreateCat() returns a new Cat and CreateDog returns a new Dog. We can now create either object without needing to know anything about its instantiation logic since that is encapsulated within factory class.  
+The abstract factory denotes the practice of using a factory to create other factories. This is most often used when there are multiple families of factories and we want to hide the instantiation logic. 
 
 ###### C# Declaration:
 ```C#
-namespace SimpleFactory
+using System;
+
+namespace AbstractFactory
 {
-    public class Dog
+    public interface IAnimal
     {
-        public Dog()
+        void makeSound();
+    }
+
+    public interface IClothing
+    {
+        void printDescription();
+    }   
+
+    public class Dog : IAnimal
+    {
+        public void makeSound()
         {
-            Console.WriteLine("Created Dog");
+            Console.WriteLine("Woof!");
         }
     }
-    public class Cat
+
+    public class Cat : IAnimal
     {
-        public Cat()
+        public void makeSound()
         {
-            Console.WriteLine("Created Cat");
+            Console.WriteLine("Meow!");
         }
     }
-    public class AnimalFactory
+
+    public class Hat : IClothing
     {
-        public Dog createDog()
+        public void printDescription()
         {
-            return new Dog();
+            Console.WriteLine("A brightly colored party hat!");
         }
-        public Cat createCat()
+    }
+
+    public class Pants : IClothing
+    {
+        public void printDescription()
         {
-            return new Cat();
+            Console.WriteLine("Denim based pants!");
+        }
+    }
+
+    public abstract class AbstractFactory
+    {
+        public abstract IAnimal getAnimal(string animal);
+        public abstract IClothing getClothing(string clothing);
+    }
+
+    public class AnimalFactory : AbstractFactory
+    {
+        public override IAnimal getAnimal(string animal)
+        {
+            if (animal == "cat")
+                return new Cat();
+            if (animal == "dog")
+                return new Dog();
+            return null;
+        }
+
+        public override IClothing getClothing(string clothing)
+        {
+            return null;
+        }
+    }
+
+    public class ClothingFactory : AbstractFactory
+    {
+        public override IAnimal getAnimal(string animal)
+        {
+            return null;
+        }
+
+        public override IClothing getClothing(string clothing)
+        {
+            if (clothing == "hat")
+                return new Hat();
+            if (clothing == "pants")
+                return new Pants();
+            return null;
+        }
+    }
+
+    public class FactoryFactory
+    {
+        public static AbstractFactory Create(string factory)
+        {
+            if (factory == "animal")
+                return new AnimalFactory();
+            if (factory == "clothing")
+                return new ClothingFactory();
+            return null;
         }
     }
 }
 ```
-
-
 ###### C# Usage:
 ```C#
 using System;
-using System.Collections.Generic;
-using SF = SimpleFactory;
+using AF = AbstractFactory;
 
 namespace Design_Patterns
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            
-            //Declare simple factory.
-            SF.AnimalFactory animalFactory = new SF.AnimalFactory();
+        {      
+            //Use the hidden factory instantiation logic to two factories.
+            AF.AbstractFactory Factory1 = AF.FactoryFactory.Create("animal");
+            AF.AbstractFactory Factory2 = AF.FactoryFactory.Create("clothing");
 
-            //Use factory to create objects.
-            SF.Dog sfDog = animalFactory.createDog();
-            SF.Cat sfCat = animalFactory.createCat();
+            //Use the factories to create the needed objects.
+            AF.IAnimal dog = Factory1.getAnimal("dog");
+            AF.IAnimal cat = Factory1.getAnimal("cat");
+
+            AF.IClothing hat = Factory2.getClothing("hat");
+            AF.IClothing pants = Factory2.getClothing("pants");
+
+            //Output data to make sure everything went OK. 
+            dog.makeSound();
+            cat.makeSound();
+
+            hat.printDescription();
+            pants.printDescription();//Output: 
         }
     }
 }
-//Output: 
-//Created Dog
-//Created Cat
+//Output:
+//Woof!
+//Meow!
+//A brightly colored party hat!
+//Denim based pants!
 ```
 
 
