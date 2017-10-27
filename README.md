@@ -13,10 +13,9 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
   * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate (hide) object instantiation logic and to declare this logic in one place.
   * **[Factory Method / Virtual Constructor](#factory-method):** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this object creation method in child classes. This approach increases scalability as we force polymorphic dependency.
   * **[Abstract Factory / Super Factory](#abstract-factory):** The abstract factory denotes the practice of using a factory to create other factories. This is most often used when there are multiple families of factories and we want to hide the instantiation logic. 
+  * **[Builder](#builder):** Builder… //To
+  * **[Prototype](#prototype):** Prototype… //To do
 
-* Item 2
-  * Item 2a
-  * Item 2b
 
 
 Design patterns that deal with object creation.
