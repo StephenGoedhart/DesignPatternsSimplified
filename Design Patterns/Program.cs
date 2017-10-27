@@ -27,6 +27,9 @@ namespace Design_Patterns
             FM.IAnimal fmDog = dogFactory.Create();
             FM.IAnimal fmCat = catFactory.Create();
 
+            fmDog.makeSound();
+            fmCat.makeSound();
+
             Console.WriteLine("//------------------- Command Design Pattern ----------------------//");
             //Define objects.
             IVehicle AudiA6 = new Car();

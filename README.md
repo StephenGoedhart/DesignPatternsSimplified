@@ -128,7 +128,7 @@ namespace Design_Patterns
 
 ![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/factoryMethodDesignPatternDiagram.png "Factory Method Design Pattern Diagram")
 
-A factory class instantiates objects based on classes with a common parent class or interface using polymorphism. This way we guarantee type and decrease invalid type errors.
+The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this factory method in child classes. This approach increases scalability as we force polymorphic dependency.
 
 ###### C# Code example:
 ```C#
@@ -172,10 +172,38 @@ public interface IAnimal
         {
             return new Cat();
         }
-    }//Output: 
-//This is a circle 
-//This is a rectangle
-//This is a triangle
+    }
+```
+
+```C#
+using System;
+using System.Collections.Generic;
+using FM = FactoryMethod;
+
+namespace Design_Patterns
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Define factories with overridden factory methods.
+            FM.CatFactory catFactory = new FM.CatFactory();
+            FM.DogFactory dogFactory = new FM.DogFactory();
+
+            //Use factories to define objects based on the same type. 
+            FM.IAnimal fmDog = dogFactory.Create();
+            FM.IAnimal fmCat = catFactory.Create();
+
+                             fmDog.makeSound();
+            fmCat.makeSound();
+         }
+    }
+}
+
+
+//Output: 
+//Woof! 
+//Meow!
 ```
 
 ## Command Pattern
