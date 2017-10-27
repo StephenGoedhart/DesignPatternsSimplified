@@ -1,8 +1,8 @@
 ###### *Stephen Goedhart*
-# Design Patterns: Simplified
+# Gang of Four: Simplified
 ### Simplified documentation to increase memorability and usability.
 
-Source Title: Design Patterns: Elements of reusable Object-Oriented Software. 
+Original Title: Design Patterns: Elements of reusable Object-Oriented Software. 
 
 Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
@@ -11,7 +11,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 
 * **Creational Design Patterns:** Design patterns that deal with object creation.
   * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
-  * **[Factory Method / Virtual Constructor](#factory-method):** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this object creation method in child classes. This approach increases scalability as we force polymorphic dependency.
+  * **[Factory Method / Virtual Constructor](#factory-method):** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this factory method in child classes. This approach increases scalability as we force polymorphic dependency.
   * **Abstract Factory / Kit Pattern:** 
 
 
@@ -130,7 +130,7 @@ namespace Design_Patterns
 
 The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this factory method in child classes. This approach increases scalability as we force polymorphic dependency.
 
-###### C# Declaration:
+###### C# Code example:
 ```C#
 public interface IAnimal
     {
@@ -174,7 +174,7 @@ public interface IAnimal
         }
     }
 ```
-###### C# Usage:
+
 ```C#
 using System;
 using System.Collections.Generic;

@@ -30,6 +30,15 @@ namespace Design_Patterns
             fmDog.makeSound();
             fmCat.makeSound();
 
+            Console.WriteLine("//------------------- Abstract Factory Pattern ----------------------//");
+
+
+
+
+
+
+
+
             Console.WriteLine("//------------------- Command Design Pattern ----------------------//");
             //Define objects.
             IVehicle AudiA6 = new Car();
