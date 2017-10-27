@@ -12,7 +12,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
 * **Creational Design Patterns:** Design patterns that deal with object creation.
   * **[Simple Factory / Factory Pattern](#simple-factory):** The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
   * **[Factory Method / Virtual Constructor](#factory-method):** The Factory Method denotes the practice of creating an abstract factory class with an object creation method. We can override this object creation method in child classes. This approach increases scalability as we force polymorphic dependency.
-  * **Abstract Factory / Kit Pattern:** 
+  * ****[Abstract Factory / Super Factory](#abstract-factory):** The abstract factory denotes the practice of using a factory to create other factories. By encapsulating the factory instantiation logic, we once again force a polymorphic approach, this time also with the factory itself. Not only this, since this factory of factories is supposed to be able to create multiple factories we are now able to create and group a family of factories. 
 
 
 * Item 2
@@ -205,6 +205,84 @@ namespace Design_Patterns
 //Woof! 
 //Meow!
 ```
+
+## Abstract Factory
+###### [< Back to pattern overview](#design-patterns-categorized)
+ 
+![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/SimpleFactoryDesignPattern.png "Simple Factory Design Pattern Diagram")
+
+The Simple Factory Pattern denotes the practice of creating a class that contains object creating methods. This pattern is used to encapsulate object instantiation logic and to declare this logic in one place.
+
+The class diagram depicts a factory class with two methods. CreateCat and CreateDog. The names are self-explanatory. CreateCat() returns a new Cat and CreateDog returns a new Dog. We can now create either object without needing to know anything about its instantiation logic since that is encapsulated within factory class.  
+
+###### C# Declaration:
+```C#
+namespace SimpleFactory
+{
+    public class Dog
+    {
+        public Dog()
+        {
+            Console.WriteLine("Created Dog");
+        }
+    }
+    public class Cat
+    {
+        public Cat()
+        {
+            Console.WriteLine("Created Cat");
+        }
+    }
+    public class AnimalFactory
+    {
+        public Dog createDog()
+        {
+            return new Dog();
+        }
+        public Cat createCat()
+        {
+            return new Cat();
+        }
+    }
+}
+```
+
+
+###### C# Usage:
+```C#
+using System;
+using System.Collections.Generic;
+using SF = SimpleFactory;
+
+namespace Design_Patterns
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            //Declare simple factory.
+            SF.AnimalFactory animalFactory = new SF.AnimalFactory();
+
+            //Use factory to create objects.
+            SF.Dog sfDog = animalFactory.createDog();
+            SF.Cat sfCat = animalFactory.createCat();
+        }
+    }
+}
+//Output: 
+//Created Dog
+//Created Cat
+```
+
+
+
+
+
+
+
+
+
 
 ## Command Pattern
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SF = SimpleFactory;
 using FM = FactoryMethod;
+using AF = AbstractFactory;
 
 namespace Design_Patterns
 {
@@ -32,11 +33,23 @@ namespace Design_Patterns
 
             Console.WriteLine("//------------------- Abstract Factory Pattern ----------------------//");
 
+            //Use the hidden factory instantiation logic to two factories.
+            AF.AbstractFactory Factory1 = AF.FactoryFactory.Create("animal");
+            AF.AbstractFactory Factory2 = AF.FactoryFactory.Create("clothing");
 
+            //Use the factories to create the needed objects.
+            AF.IAnimal dog = Factory1.getAnimal("dog");
+            AF.IAnimal cat = Factory1.getAnimal("cat");
 
+            AF.IClothing hat = Factory2.getClothing("hat");
+            AF.IClothing pants = Factory2.getClothing("pants");
 
+            //Output data to make sure everything went OK. 
+            dog.makeSound();
+            cat.makeSound();
 
-
+            hat.printDescription();
+            pants.printDescription();
 
 
             Console.WriteLine("//------------------- Command Design Pattern ----------------------//");
