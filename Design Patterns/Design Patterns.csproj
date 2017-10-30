@@ -45,6 +45,7 @@
     <Compile Include="AbstractFactory.cs" />
     <Compile Include="AdapterDesignPattern.cs" />
     <Compile Include="CommandPattern.cs" />
+    <Compile Include="Decorator.cs" />
     <Compile Include="FactoryMethodPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
