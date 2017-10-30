@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using SF = SimpleFactory;
 using FM = FactoryMethod;
 using AF = AbstractFactory;
+using AP = AdapterPattern;
 
 namespace Design_Patterns
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            
+        {            
             Console.WriteLine("//------------------- Simple Factory Pattern ----------------------//");
             //Declare simple factory.
             SF.AnimalFactory animalFactory = new SF.AnimalFactory();
@@ -38,18 +38,35 @@ namespace Design_Patterns
             AF.AbstractFactory Factory2 = AF.FactoryFactory.Create("clothing");
 
             //Use the factories to create the needed objects.
-            AF.IAnimal dog = Factory1.getAnimal("dog");
-            AF.IAnimal cat = Factory1.getAnimal("cat");
+            AF.IAnimal afDog = Factory1.getAnimal("dog");
+            AF.IAnimal afCat = Factory1.getAnimal("cat");
 
-            AF.IClothing hat = Factory2.getClothing("hat");
-            AF.IClothing pants = Factory2.getClothing("pants");
+            AF.IClothing afHat = Factory2.getClothing("hat");
+            AF.IClothing afPants = Factory2.getClothing("pants");
 
             //Output data to make sure everything went OK. 
-            dog.makeSound();
-            cat.makeSound();
+            afDog.makeSound();
+            afCat.makeSound();
 
-            hat.printDescription();
-            pants.printDescription();
+            afHat.printDescription();
+            afPants.printDescription();
+
+            Console.WriteLine("//------------------- Adapter Design Pattern ----------------------//");  
+ 
+            AP.IAnimal apDog = new AP.Dog();
+            AP.IAnimal apCat = new AP.Cat();
+            AP.IVehicle jaguar = new AP.Car();
+            AP.IAnimal adaptedJaguar = new AP.AnimalVehicleAdapter(jaguar);
+
+            List<AP.IAnimal> animals = new List<AP.IAnimal>();
+            animals.Add(apDog);
+            animals.Add(apCat);
+            animals.Add(adaptedJaguar);
+
+            foreach(AP.IAnimal animal in animals)
+            {
+                animal.makeSound();
+            }
 
 
             Console.WriteLine("//------------------- Command Design Pattern ----------------------//");
