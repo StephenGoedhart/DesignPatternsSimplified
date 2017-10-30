@@ -15,6 +15,9 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
   * **[Abstract Factory / Super Factory](#abstract-factory):** The abstract factory denotes the practice of using a factory to create other factories. This is most often used when there are multiple families of factories and we want to hide the instantiation logic. 
   * **[Builder](#builder):** Builder… //To
   * **[Prototype](#prototype):** Prototype… //To do
+* **Structural Design Patterns:** Design patterns that deal with relationships between components. 
+  * **[Adapter](#adapter):** The Abstract pattern is used to make objects of different types compatible. One of the benefits of doing this is easy collaboration and scalability, since we don’t have to alter type definitions to make them compatible. 
+
 
 
 
