@@ -15,6 +15,7 @@ Original Authors:  E. Gamma, R. Helm, R. Johnson, J. Vlissides.
   * **[Abstract Factory / Super Factory](#abstract-factory):** The abstract factory denotes the practice of using a factory to create other factories. This is most often used when there are multiple families of factories and we want to hide the instantiation logic. 
   * **[Builder](#builder):** Builder… //To
   * **[Prototype](#prototype):** Prototype… //To do
+
 * **Structural Design Patterns:** Design patterns that deal with relationships between components. 
   * **[Adapter](#adapter):** The Abstract pattern is used to make objects of different types compatible. One of the benefits of doing this is easy collaboration and scalability, since we don’t have to alter type definitions to make them compatible. 
 
@@ -356,11 +357,12 @@ namespace Design_Patterns
 ## Adapter 
 ###### [< Back to pattern overview](#design-patterns-categorized)
  
-![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/AbstractFactoryDesignPatternDiagram.png "Abstract Factory Design Pattern Diagram")
+![alt text]( https://github.com/StephenGoedhart/DesignPatternsSimplified/blob/master/Src/images/AdapterDesignPattern.png "Abstract Factory Design Pattern Diagram")
 
-The Abstract pattern is used to make objects of different types compatible. One of the benefits of doing this is easy collaboration and scalability, since we don’t have to alter type definitions to make them compatible. 
+The Abstract pattern is used to make objects of different types compatible. One of the benefits of doing this is easy collaboration, since we don’t have to alter type definitions (that might’ve been written by someone else) to make them compatible. 
 
 In the code below you can see that we created two interfaces. IAnimal and IVehicle. These interfaces contain different methods. By creating an AdapterClass we can call IVehicle specific methods (throttle();) from IVehicle objects whenever we request IAnimal specific methods (makeSound();) from the adapter itself. 
+
 ###### C# Declaration:
 ```C#
 using System;
